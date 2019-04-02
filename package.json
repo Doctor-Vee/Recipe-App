@@ -1,0 +1,30 @@
+{
+  "name": "recipe-app",
+  "version": "1.0.0",
+  "description": "Recipe App for storing ingredients and directions for making various  meals and snacks",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Victor-Chinewubeze/Recipe-App.git"
+  },
+  "keywords": [
+    "recipe",
+    "meals",
+    "snacks",
+    "ejs"
+  ],
+  "author": "Doctor Vee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Victor-Chinewubeze/Recipe-App/issues"
+  },
+  "homepage": "https://github.com/Victor-Chinewubeze/Recipe-App#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "pg": "^7.9.0"
+  }
+}

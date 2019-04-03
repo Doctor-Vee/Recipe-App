@@ -4,12 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Recipe App | Welcome</title>
+  <title>Recipe App | Add New Recipe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Email Messaging Site">
   <meta name="keywords" content="recipe, meals, snacks, ejs">
   <meta name="author" content="Victor CHINEWUBEZE">
-  <link rel="stylesheet" type="text/css" media="screen" href="UI/css/styles.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../css/styles.css" />
   <link rel="shortcut icon" type="image/x-icon" href="UI/img/smiley.png">
 </head>
 
@@ -27,17 +27,17 @@
           </a>
 
         </span>
-        <h1 id="epic"><a href="index.html"><span class="highlight">Recipe </span>App</a></h1>
+        <h1 id="epic"><a href="../../index.html"><span class="highlight">Recipe </span>App</a></h1>
       </div>
       <nav>
         <ul>
-          <a href="../index.html">
-            <li class="current">Home</li>
+          <a href="../../index.html">
+            <li>Home</li>
           </a>
-          <a href="UI/html/addrecipe.html">
-            <li>Add Recipe</li>
+          <a href="#">
+            <li class="current">Add Recipe</li>
           </a>
-          <a href="UI/html/recipes.html">
+          <a href="recipes.html">
             <li>View Recipes</li>
           </a>
         </ul>
@@ -52,35 +52,39 @@
       <ul>
         <a href="#" class="close-btn" onclick="closeSlideMenu()">&times;</a>
         <a href="#">
-          <li class="current">Home</li>
+          <li>Home</li>
         </a>
-        <a href="UI/html/addrecipe.html">
-          <li>Add Recipe</li>
+        <a href="#">
+          <li class="current">Add Recipe</li>
         </a>
-        <a href="UI/html/recipes.html">
+        <a href="recipes.html">
           <li>View Recipes</li>
         </a>
       </ul>
     </aside>
   </section>
 
-  <section id="welcome">
-    <div class="container blur">
-      <h1>Welcome!</h1>
-      <p class="container">You can store various recipes here and come back to them whenever you need them</p>
-    </div>
-  </section>
+  <h2 class="highlight">Add New Recipe </h2>
 
-  <div class="pt50 pb50 container" id="items">
-    <a href="UI/html/addrecipe.html"><button>Add New Recipe</button></a>
-    <a href="UI/html/recipes.html"><button>View Recipes</button></a>
+  <div class="formBox">
+    <form class="container" action="/addrecipe" method="POST">
+      <p class="inputBox">
+        <input type="text" name="name" id="name" required>
+        <label for="name">Name:</label>
+      </p>
+      <p class="inputBox">
+        <textarea name="ingredients" id="ingredients" placeholder="Ingredients..."></textarea>
+      </p>
+      <p class="inputBox">
+        <textarea name="directions" id="directions" placeholder="Directions..."></textarea>
+      </p>
+      <button type="submit">Add Recipe</button>
+    </form>
   </div>
 
   <div id="headerSpace"></div>
-
-  <script src="UI/js/main.js"></script>
-
   <footer>Recipe App, Copyright &copy; 2019</footer>
+  <script src="../js/main.js"></script>
 </body>
 
 </html>

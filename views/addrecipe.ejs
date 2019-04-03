@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Recipe App | Add New Recipe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Email Messaging Site">
+  <meta name="keywords" content="recipe, meals, snacks, ejs">
+  <meta name="author" content="Victor CHINEWUBEZE">
+  <link rel="stylesheet" type="text/css" media="screen" href="../UI/css/styles.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../UI/img/smiley.png">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div id="appName">
+        <span class="open-slide">
+          <a href="#" onclick="openSlideMenu()">
+            <svg width="30" height="30">
+              <path d="M0,5 30,5" stroke="#fff" stroke-width="5" />
+              <path d="M0,14 30,14" stroke="#fff" stroke-width="5" />
+              <path d="M0,23 30,23" stroke="#fff" stroke-width="5" />
+            </svg>
+          </a>
+
+        </span>
+        <h1 id="epic"><a href="/"><span class="highlight">Recipe </span>App</a></h1>
+      </div>
+      <nav>
+        <ul>
+          <a href="/">
+            <li>Home</li>
+          </a>
+          <a href="#">
+            <li class="current">Add Recipe</li>
+          </a>
+          <a href="/recipes">
+            <li>View Recipes</li>
+          </a>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div id="headerSpace"></div>
+
+  <section id="index-side-bar">
+    <aside class="side-bar" id="side-bar">
+      <ul>
+        <a href="#" class="close-btn" onclick="closeSlideMenu()">&times;</a>
+        <a href="/">
+          <li>Home</li>
+        </a>
+        <a href="#">
+          <li class="current">Add Recipe</li>
+        </a>
+        <a href="/recipes">
+          <li>View Recipes</li>
+        </a>
+      </ul>
+    </aside>
+  </section>
+
+  <h2 class="highlight">Add New Recipe </h2>
+
+  <div class="formBox">
+    <form class="container" action="/addrecipe" method="POST">
+      <p class="inputBox">
+        <input type="text" name="name" id="name" required>
+        <label for="name">Name:</label>
+      </p>
+      <p class="inputBox">
+        <textarea name="ingredients" id="ingredients" placeholder="Ingredients..." required></textarea>
+      </p>
+      <p class="inputBox">
+        <textarea name="directions" id="directions" placeholder="Directions..." required></textarea>
+      </p>
+      <button type="submit">Add Recipe</button>
+    </form>
+  </div>
+
+    <div class="results" id="results">
+      <p><b>Name: </b><%= recipe.name %> <br /> <br />
+        <b>Ingredients: </b><br />
+        <p><%= recipe.ingredients %></p> <br />
+        <b>Directions: </b><br />
+        <p><%= recipe.directions %></p>
+      </p>
+    </div>
+
+  <div id="headerSpace"></div>
+  <footer>Recipe App, Copyright &copy; 2019</footer>
+  <script src="../UI/js/main.js"></script>
+</body>
+
+</html>

@@ -32,7 +32,7 @@ app.get('/addrecipe', (req, res) => {
 });
 
 app.get('/recipes', (req, res) => {
-  pool.query('SELECT * FROM recipes', (err, result) => {
+  pool.query('SELECT * FROM recipes ORDER BY name;', (err, result) => {
     if (err) {
       return console.error('error running query', err);
     }
@@ -51,6 +51,20 @@ app.post('/addrecipe', (req, res) => {
         recipe: result.rows[0]
       });
     });
+});
+
+app.delete('/delete/:id', (req, res) => {
+  const { id } = req.params;
+  const query = `DELETE FROM recipes WHERE id = ${id};`;
+  pool.query(query, (err) => {
+    if (err) {
+      return err;
+    }
+    return res.status(200).send({
+      status: 200,
+      data: 'deleted successfully',
+    });
+  });
 });
 
 app.listen(3000, function () {

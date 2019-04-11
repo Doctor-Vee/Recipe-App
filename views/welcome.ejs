@@ -12,7 +12,6 @@
   <link rel="stylesheet" type="text/css" media="screen" href="../UI/css/styles.css" />
   <link rel="shortcut icon" type="image/x-icon" href="../UI/img/smiley.png">
 </head>
-
 <body>
   <header>
     <div class="container">
@@ -35,10 +34,13 @@
             <li class="current">Home</li>
           </a>
           <a href="/addrecipe">
-            <li>Add Recipe</li>
+            <li class="current">Add Recipe</li>
           </a>
-          <a href="/recipes">
-            <li>View Recipes</li>
+          <a href="/search">
+            <li>Search for Recipes</li>
+          </a>
+          <a href="/allrecipes">
+            <li>View All Recipes</li>
           </a>
         </ul>
       </nav>
@@ -51,14 +53,17 @@
     <aside class="side-bar" id="side-bar">
       <ul>
         <a href="#" class="close-btn" onclick="closeSlideMenu()">&times;</a>
-        <a href="#">
+        <a href="/">
           <li class="current">Home</li>
         </a>
         <a href="/addrecipe">
-          <li>Add Recipe</li>
+          <li class="current">Add Recipe</li>
         </a>
-        <a href="/recipes">
-          <li>View Recipes</li>
+        <a href="/search">
+          <li>Search for Recipes</li>
+        </a>
+        <a href="/allrecipes">
+          <li>View All Recipes</li>
         </a>
       </ul>
     </aside>
@@ -73,7 +78,8 @@
 
   <div class="pt50 pb50 container" id="items">
     <a href="/addrecipe"><button>Add New Recipe</button></a>
-    <a href="/recipes"><button>View Recipes</button></a>
+    <a href="/search"><button>Search for Recipes</button></a>
+    <a href="/allrecipes"><button>View All Recipes</button></a>
   </div>
 
   <div id="headerSpace"></div>

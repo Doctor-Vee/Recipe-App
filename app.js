@@ -1,14 +1,7 @@
 const express = require('express');
-const {
-  Pool
-} = require('pg');
+const pool = require('./db')
 
 const app = express();
-const connectionString = 'postgres://postgres:admin@127.0.0.1:5432/recipes';
-
-const pool = new Pool({
-  connectionString,
-});
 
 // app.engine('dust', cons.dust);
 
@@ -27,17 +20,31 @@ app.get('/', (req, res) => {
 });
 
 app.get('/addrecipe', (req, res) => {
-  let recipe = {name: 'Null', ingredients: 'Null', directions: 'Null'};
+  let recipe = {name: 'Fill the details above', ingredients: 'Null', directions: 'Null'};
   res.render('addrecipe', { recipe });
 });
 
-app.get('/recipes', (req, res) => {
+app.get('/allrecipes', (req, res) => {
   pool.query('SELECT * FROM recipes ORDER BY name;', (err, result) => {
     if (err) {
       return console.error('error running query', err);
     }
-    res.render('recipes', {
+    res.render('allrecipes', {
       recipes: result.rows
+    });
+  });
+});
+
+app.get('/search', (req, res) => {
+const item = req.query.search || 'keyword';
+const x = item.toLowerCase()
+    pool.query(`SELECT * FROM recipes WHERE lower(name) LIKE '%${x}%' OR lower(ingredients) LIKE '%${x}%' OR lower(directions) LIKE '%${x}%' ORDER BY name;`, (err, result) => {
+    if (err) {
+      return console.error('error running query', err);
+    }
+    res.render('search', {
+      recipes: result.rows,
+      keyword: item
     });
   });
 });

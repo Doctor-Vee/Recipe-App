@@ -37,8 +37,11 @@
           <a href="/addrecipe">
             <li>Add Recipe</li>
           </a>
-          <a href="#">
-            <li class="current">View Recipes</li>
+          <a href="/search">
+            <li class="current">Search for Recipes</li>
+          </a>
+          <a href="/allrecipes">
+            <li>View All Recipes</li>
           </a>
         </ul>
       </nav>
@@ -57,36 +60,41 @@
         <a href="/addrecipe">
           <li>Add Recipe</li>
         </a>
-        <a href="#">
-          <li class="current">View Recipes</li>
+        <a href="/search">
+          <li class="current">Search for Recipes</li>
+        </a>
+        <a href="/allrecipes">
+          <li>View All Recipes</li>
         </a>
       </ul>
     </aside>
   </section>
 
   <section class="container">
-    <h2 class="highlight">View Recipes </h2>
+    <h2 class="highlight">Search for Recipes </h2>
 
     <div class="formBox">
       <form class="container" action="/search" method="GET">
         <p class="inputBox">
           <input type="text" name="search" id="search" required>
-          <label for="reser">Type your word(s) here:</label>
+          <label for="reser">Type your keyword here:</label>
         </p>
         <button type="submit">Search</button>
       </form>
     </div>
-
+    <h2 class="highlight">Results for <%= keyword %> </h2>
     <% recipes.forEach((item) => { %>
     <div class="results" id="results">
-      <p><h3><%= item.name %> </h3> <hr />
+      <p>
+        <h3><%= item.name %> </h3>
+        <hr />
         <b>Ingredients </b><br />
         <%= item.ingredients %><br /><br />
         <b>Directions </b><br />
         <%= item.directions %> <br />
       </p>
       <button class="small-button">Update</button>
-      <button class="small-button delete-recipe" data-id="<%= item.id %>">Delete</button>
+      <button class="small-button" onclick="deleteData(<%= item.id %>)">Delete</button>
     </div>
     <% }); %>
 

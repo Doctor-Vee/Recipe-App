@@ -13,6 +13,14 @@ function deleteData(id) {
       }
 }
 
+function updateData(id, name, ingredients, directions) {
+  console.log(id, name, ingredients, directions);
+  document.getElementById('modal-id').setAttribute('value', id);
+  document.getElementById('modal-name').setAttribute('value', name);
+  document.getElementById('modal-ingredients').innerHTML = ingredients;
+  document.getElementById('modal-directions').innerHTML = directions;
+}
+
 function openSlideMenu() {
   document.getElementById('side-bar').style.width = '200px';
 }

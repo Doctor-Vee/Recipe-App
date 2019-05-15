@@ -60,6 +60,19 @@ app.post('/addrecipe', (req, res) => {
     });
 });
 
+app.post('/update', (req, res) => {
+  console.log([req.body.name, req.body.ingredients, req.body.directions, req.body.id]);
+  pool.query('UPDATE recipes SET name=$1, ingredients=$2, directions=$3 WHERE id=$4 RETURNING *; ',
+      [req.body.name, req.body.ingredients, req.body.directions, req.body.id])
+    .then((result) => {
+      console.log(result.rows)
+      res.render('search', {
+        recipes: result.rows,
+        keyword: 'updated recipe'
+      });
+    });
+});
+
 app.delete('/delete/:id', (req, res) => {
   const { id } = req.params;
   const query = `DELETE FROM recipes WHERE id = ${id};`;

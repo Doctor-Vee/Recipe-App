@@ -71,38 +71,66 @@
   </section>
 
   <section class="container">
-  <h2 class="highlight">Add New Recipe </h2>
+    <h2 class="highlight">Add New Recipe </h2>
 
-  <div class="formBox">
-    <form class="container" action="/addrecipe" method="POST">
-      <p class="inputBox">
-        <input type="text" name="name" id="name" required>
-        <label for="name">Name:</label>
-      </p>
-      <p class="inputBox">
-        <textarea name="ingredients" id="ingredients" placeholder="Ingredients..." required></textarea>
-      </p>
-      <p class="inputBox">
-        <textarea name="directions" id="directions" placeholder="Directions..." required></textarea>
-      </p>
-      <button type="submit">Add Recipe</button>
-    </form>
-  </div>
+    <div class="formBox">
+      <form class="container" action="/addrecipe" method="POST">
+        <p class="inputBox">
+          <input type="text" name="name" id="name" required>
+          <label for="name">Name:</label>
+        </p>
+        <p class="inputBox">
+          <textarea name="ingredients" id="ingredients" placeholder="Ingredients..." required></textarea>
+        </p>
+        <p class="inputBox">
+          <textarea name="directions" id="directions" placeholder="Directions..." required></textarea>
+        </p>
+        <button type="submit">Add Recipe</button>
+      </form>
+    </div>
 
     <div id="single-result">
-      <p><h3><%= recipe.name %> </h3> <hr />
+      <p>
+        <h3><%= recipe.name %> </h3>
+        <hr />
         <b>Ingredients </b><br />
         <%= recipe.ingredients %><br /><br />
         <b>Directions </b><br />
         <%= recipe.directions %> <br />
       </p>
-      <button class="small-button">Update</button>
+      <a href="#update">
+        <!--Update only works for now if there is no line-break added when entering values -->
+        <button class="small-button"
+          onclick="updateData(<%= recipe.id %>, '<%= recipe.name %>', '<%= recipe.ingredients %>', '<%= recipe.directions %>')">Update</button></a>
+      <button class="small-button" onclick="deleteData(<%= recipe.id %>)">Delete</button>
     </div>
-</section>
+  </section>
+
+  <div class="modal" id="update">
+    <div class="modal-contents">
+      <form class="container" action="/update" method="POST">
+        <a href="#" class="close-btn"">&times;</a>
+        <br /> <br />
+
+        <input type="hidden" name="id" id="modal-id" required>
+
+          <p class="inputBox">
+            <input type="text" name="name" id="modal-name" required>
+            <label for="name">Name:</label>
+          </p>
+          <p class="inputBox">
+            <textarea name="ingredients" id="modal-ingredients" placeholder="Ingredients..." required></textarea>
+          </p>
+          <p class="inputBox">
+            <textarea name="directions" id="modal-directions" placeholder="Directions..." required></textarea>
+          </p>
+          <button type="submit">Update</button>
+      </form>
+    </div>
+  </div>
 
   <div id="headerSpace"></div>
   <footer>Recipe App, Copyright &copy; 2019</footer>
-  <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
   <script src="../UI/js/main.js"></script>
 </body>
 

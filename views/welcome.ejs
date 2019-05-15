@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Recipe App | Welcome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Email Messaging Site">
+  <meta name="keywords" content="recipe, meals, snacks, ejs">
+  <meta name="author" content="Victor CHINEWUBEZE">
+  <link rel="stylesheet" type="text/css" media="screen" href="../UI/css/styles.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../UI/img/smiley.png">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div id="appName">
+        <span class="open-slide">
+          <a href="#" onclick="openSlideMenu()">
+            <svg width="30" height="30">
+              <path d="M0,5 30,5" stroke="#fff" stroke-width="5" />
+              <path d="M0,14 30,14" stroke="#fff" stroke-width="5" />
+              <path d="M0,23 30,23" stroke="#fff" stroke-width="5" />
+            </svg>
+          </a>
+
+        </span>
+        <h1 id="epic"><a href="/"><span class="highlight">Recipe </span>App</a></h1>
+      </div>
+      <nav>
+        <ul>
+          <a href="/">
+            <li class="current">Home</li>
+          </a>
+          <a href="/addrecipe">
+            <li class="current">Add Recipe</li>
+          </a>
+          <a href="/search">
+            <li>Search for Recipes</li>
+          </a>
+          <a href="/allrecipes">
+            <li>View All Recipes</li>
+          </a>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div id="headerSpace"></div>
+
+  <section id="index-side-bar">
+    <aside class="side-bar" id="side-bar">
+      <ul>
+        <a href="#" class="close-btn" onclick="closeSlideMenu()">&times;</a>
+        <a href="/">
+          <li class="current">Home</li>
+        </a>
+        <a href="/addrecipe">
+          <li class="current">Add Recipe</li>
+        </a>
+        <a href="/search">
+          <li>Search for Recipes</li>
+        </a>
+        <a href="/allrecipes">
+          <li>View All Recipes</li>
+        </a>
+      </ul>
+    </aside>
+  </section>
+
+  <section id="welcome">
+    <div class="container blur">
+      <h1>Welcome!</h1>
+      <p class="container">You can store various recipes here and come back to them whenever you need them</p>
+    </div>
+  </section>
+
+  <div class="pt50 pb50 container" id="items">
+    <a href="/addrecipe"><button>Add New Recipe</button></a>
+    <a href="/search"><button>Search for Recipes</button></a>
+    <a href="/allrecipes"><button>View All Recipes</button></a>
+  </div>
+
+  <div id="headerSpace"></div>
+
+  <footer>Recipe App, Copyright &copy; 2019</footer>
+  <script src="../UI/js/main.js"></script>
+</body>
+
+</html>

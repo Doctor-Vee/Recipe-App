@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Recipe App | Welcome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Email Messaging Site">
+  <meta name="keywords" content="recipe, meals, snacks, ejs">
+  <meta name="author" content="Victor CHINEWUBEZE">
+  <link rel="stylesheet" type="text/css" media="screen" href="../UI/css/styles.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="../UI/img/smiley.png">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div id="appName">
+        <span class="open-slide">
+          <a href="#" onclick="openSlideMenu()">
+            <svg width="30" height="30">
+              <path d="M0,5 30,5" stroke="#fff" stroke-width="5" />
+              <path d="M0,14 30,14" stroke="#fff" stroke-width="5" />
+              <path d="M0,23 30,23" stroke="#fff" stroke-width="5" />
+            </svg>
+          </a>
+
+        </span>
+        <h1 id="epic"><a href="/"><span class="highlight">Recipe </span>App</a></h1>
+      </div>
+      <nav>
+        <ul>
+          <a href="/">
+            <li>Home</li>
+          </a>
+          <a href="/addrecipe">
+            <li>Add Recipe</li>
+          </a>
+          <a href="/search">
+            <li>Search for Recipes</li>
+          </a>
+          <a href="/allrecipes">
+            <li class="current">View All Recipes</li>
+          </a>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div id="headerSpace"></div>
+
+  <section id="index-side-bar">
+    <aside class="side-bar" id="side-bar">
+      <ul>
+        <a href="#" class="close-btn" onclick="closeSlideMenu()">&times;</a>
+        <a href="/">
+          <li>Home</li>
+        </a>
+        <a href="/addrecipe">
+          <li>Add Recipe</li>
+        </a>
+        <a href="/search">
+          <li>Search for Recipes</li>
+        </a>
+        <a href="/allrecipes">
+          <li class="current">View All Recipes</li>
+        </a>
+      </ul>
+    </aside>
+  </section>
+
+  <section class="container">
+    <h2 class="highlight">View All Recipes </h2>
+
+    
+    <div class="results" id="results">
+      <p>
+        <h3>Biscuit </h3>
+        <hr />
+        <b>Ingredients </b><br />
+        Hckjkjlcc<br /><br />
+        <b>Directions </b><br />
+        khgihiuids <br />
+      </p>
+      <a href="#update">
+      <button class="small-button" onclick="updateData(24, 'Biscuit', 'Hckjkjlcc', 'khgihiuids')">Update</button></a>
+      <button class="small-button" onclick="deleteData(24)">Delete</button>
+    </div>
+    
+    <div class="results" id="results">
+      <p>
+        <h3>Bread </h3>
+        <hr />
+        <b>Ingredients </b><br />
+        Flour
+Butter
+Milk<br /><br />
+        <b>Directions </b><br />
+        Bake <br />
+      </p>
+      <a href="#update">
+      <button class="small-button" onclick="updateData(19, 'Bread', 'Flour
+Butter
+Milk', 'Bake')">Update</button></a>
+      <button class="small-button" onclick="deleteData(19)">Delete</button>
+    </div>
+    
+    <div class="results" id="results">
+      <p>
+        <h3>Chin Chin </h3>
+        <hr />
+        <b>Ingredients </b><br />
+        Flour
+Baking Powder
+Egg
+Milk
+Sugar<br /><br />
+        <b>Directions </b><br />
+        Fry <br />
+      </p>
+      <a href="#update">
+      <button class="small-button" onclick="updateData(20, 'Chin Chin', `Flour
+Baking Powder
+Egg
+Milk
+Sugar, 'Fry')">Update</button></a>
+      <button class="small-button" onclick="deleteData(20)">Delete</button>
+    </div>
+    
+    <div class="results" id="results">
+      <p>
+        <h3>Fried Egg </h3>
+        <hr />
+        <b>Ingredients </b><br />
+        Egg
+Groundnut oil
+<br /><br />
+        <b>Directions </b><br />
+        Fry <br />
+      </p>
+      <a href="#update">
+      <button class="small-button" onclick="updateData(26, 'Fried Egg', 'Egg
+Groundnut oil
+', 'Fry')">Update</button></a>
+      <button class="small-button" onclick="deleteData(26)">Delete</button>
+    </div>
+    
+    <div class="results" id="results">
+      <p>
+        <h3>Fried Rice </h3>
+        <hr />
+        <b>Ingredients </b><br />
+        Rice
+Curry
+Groundnut oil<br /><br />
+        <b>Directions </b><br />
+        Cook and fry whatever <br />
+      </p>
+      <a href="#update">
+      <button class="small-button" onclick="updateData(25, 'Fried Rice', 'Rice
+Curry
+Groundnut oil', 'Cook and fry whatever')">Update</button></a>
+      <button class="small-button" onclick="deleteData(25)">Delete</button>
+    </div>
+    
+    <div class="results" id="results">
+      <p>
+        <h3>Pancake </h3>
+        <hr />
+        <b>Ingredients </b><br />
+        Flour 
+Sugar
+Milk<br /><br />
+        <b>Directions </b><br />
+        Just mix and fry <br />
+      </p>
+      <a href="#update">
+      <button class="small-button" onclick="updateData(1, 'Pancake', 'Flour 
+Sugar
+Milk', 'Just mix and fry')">Update</button></a>
+      <button class="small-button" onclick="deleteData(1)">Delete</button>
+    </div>
+    
+
+  </section>
+
+  <div class="modal" id="update">
+    <div class="modal-contents">
+      <form class="container" action="/update" method="POST">
+        <a href="#" class="close-btn"">&times;</a>
+        <br /> <br />
+        <p class="inputBox">
+            <input type="text" name="id" id="id" required>
+            <label for="name">ID:</label>
+          </p>
+        <p class="inputBox">
+          <input type="text" name="name" id="name" required>
+          <label for="name">Name:</label>
+        </p>
+        <p class="inputBox">
+          <textarea name="ingredients" id="ingredients" placeholder="Ingredients..." required></textarea>
+        </p>
+        <p class="inputBox">
+          <textarea name="directions" id="directions" placeholder="Directions..." required></textarea>
+        </p>
+        <button type="submit">Update</button>
+      </form>
+      </div>
+  </div>
+
+  <div id="headerSpace"></div>
+  <footer>Recipe App, Copyright &copy; 2019</footer>
+  <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+  <script src="../UI/js/main.js"></script>
+</body>
+
+</html>

@@ -4,7 +4,9 @@
   "description": "Recipe App for storing ingredients and directions for making various  meals and snacks",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "table": "node ./createTable",
+    "start": "node app"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,7 @@
   },
   "homepage": "https://github.com/Victor-Chinewubeze/Recipe-App#readme",
   "dependencies": {
+    "dotenv": "^7.0.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "pg": "^7.9.0"
